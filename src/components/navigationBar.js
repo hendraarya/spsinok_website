@@ -1,14 +1,46 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import Spsilogo from "../assets/images/logospsi.png";
+import Pukspsi from "../assets/images/puknok.png";
 const NavigationBar = () => {
   return (
-    <nav className="bg-gradient-to-r from-white to-gray-900 px-6">
-      <div className="container">
-        <div className="flex flex-wrap">
-          <img src={Spsilogo} alt="SPSI" className="w-16 md:w-96" />
-          <h3 className="font-bold text-2xl from-neutral-800 py-6">
-            PUK <span className="text-">SPSI NOK</span>
-          </h3>
-        </div>
+    <nav className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono">
+      <div className="flex items-center space-x-1">
+        <img src={Spsilogo} className="w-12" alt="Logo SPSI" />
+        <img src={Pukspsi} className="w-12" alt="Logo PUK SPSI" />
+        <Link to="./" className="font-bold">
+          PUK SPSI NOK
+        </Link>
+      </div>
+      <div className="px-4 cursor-pointer md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12 mt-2 ml-4 block sm:hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </div>
+      <div className="pr-8 md:block hidden">
+        <Link className="p-4" to="/">
+          Home
+        </Link>
+        <Link className="p-4" to="/profile">
+          Profile
+        </Link>
+        <Link className="p-4" to="/about">
+          About
+        </Link>
+        <Link className="p-4" to="/new">
+          News
+        </Link>
       </div>
     </nav>
   );
