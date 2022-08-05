@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import "./App.css";
 import Dropdown from "./components/dropdown";
 import Footer from "./components/footer";
 import Home from "./pages/Home";
-// import Intro from "./components/Intro";
 import NavigationBar from "./components/navigationBar";
 
 function App() {
@@ -31,10 +30,10 @@ function App() {
       <NavigationBar toggle={toggle} />
 
       <Routes>
-        <Route path="/" exact component={Home} />
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<Home />} />
       </Routes>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      {/* <Intro /> */}
       <Footer />
     </>
   );

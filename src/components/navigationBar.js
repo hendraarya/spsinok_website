@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Spsilogo from "../assets/images/logospsi.png";
 import Pukspsi from "../assets/images/puknok.png";
+// import LogoNOK from "../assets/images/logonok.png"
 const NavigationBar = ({ toggle }) => {
   return (
     <nav
