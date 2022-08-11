@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Dropdown from "./components/dropdown";
 import Footer from "./components/footer";
-import Home from "./pages/Home";
 import NavigationBar from "./components/navigationBar";
+
+// List pages
+import Home from "./pages/Home";
+import DataMember from "./pages/DataMember";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +34,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<Home />} />
+        <Route path="about" element={<DataMember />} />
       </Routes>
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Footer />
