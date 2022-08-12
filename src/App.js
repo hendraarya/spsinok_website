@@ -8,6 +8,7 @@ import NavigationBar from "./components/navigationBar";
 // List pages
 import Home from "./pages/Home";
 import DataMember from "./pages/DataMember";
+import DataTable from "./pages/DataTable";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<DataMember />} />
+        <Route path="new" element={<DataTable />} />
       </Routes>
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Footer />
