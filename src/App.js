@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<DataMember />} />
-        <Route path="new" element={<DataTable />} />
+        <Route path="datamember" element={<DataTable />} />
       </Routes>
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Footer />

@@ -20,8 +20,8 @@ const Dropdown = ({ isOpen, toggle }) => {
       <Link className="p-4" to="/about">
         About
       </Link>
-      <Link className="p-4" to="/new">
-        News
+      <Link className="p-4" to="/datamember">
+        Data Anggota
       </Link>
     </div>
   );
