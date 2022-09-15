@@ -36,14 +36,14 @@ const NavigationBar = ({ toggle }) => {
         <Link className="p-4" to="/">
           Home
         </Link>
-        <Link className="p-4" to="/profile">
-          Profile
-        </Link>
         <Link className="p-4" to="/about">
           About
         </Link>
         <Link className="p-4" to="/datamember">
           Data Anggota
+        </Link>
+        <Link className="p-4" to="/document">
+          Document
         </Link>
       </div>
     </nav>

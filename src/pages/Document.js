@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { Grid, html } from "gridjs";
 import { css } from "@emotion/css";
-// import { _ } from "gridjs-react";
+import { _ } from "gridjs-react";
 import "gridjs/dist/theme/mermaid.css";
 
-const DataTable = () => {
+const Document = () => {
   const wrapperRef = useRef(null);
 
   const grid = new Grid({
@@ -36,27 +36,7 @@ const DataTable = () => {
         "text-align": "center",
       },
     },
-    columns: [
-      "NIK",
-      {
-        name: "Employee",
-        columns: [
-          {
-            name: "Picture",
-          },
-          {
-            name: "Name",
-          },
-        ],
-      },
-      "Departement",
-      "Section",
-      "Gender",
-      { name: "Join Date", formatter: "" },
-      "Group",
-      "Position",
-      "Shift",
-    ],
+    columns: ["Document Name", "Document Type", "Download Document"],
 
     sort: true,
     search: true,
@@ -66,23 +46,14 @@ const DataTable = () => {
       summary: false,
     },
     server: {
-      url: "http://localhost:3000/api/employees",
+      url: "http://localhost:3000/api/document",
       then: (data) =>
         data.data.map((card) => [
-          card.employee_nik,
-          html(`<img
-        src='${card.profile_picture}' 
-        width="50" height="50" style="border-radius: 10%;"
-        alt="..."
-      />`),
-          card.employee_name,
-          card.departement,
-          card.section,
-          card.gender,
-          card.join_date,
-          card.group_code,
-          card.employee_position,
-          card.shift,
+          card.name_doc,
+          card.type_doc,
+          html(
+            `<a href='${card.file_doc}' style="border: 1px solid #ccc;padding: 5px;border-radius: 5px;text-align: center; background-color:#32a4ba;color:white">Download</a>`
+          ),
         ]),
       handle: (res) => {
         // no matching records found
@@ -100,4 +71,4 @@ const DataTable = () => {
 
   return <div ref={wrapperRef} />;
 };
-export default DataTable;
+export default Document;
